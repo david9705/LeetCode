@@ -1,0 +1,35 @@
+class Solution {
+public:
+    vector<int> fairCandySwap(vector<int>& A, vector<int>& B) {
+        
+        vector<int> res;
+        int sumA = 0;
+        int sumB = 0;
+        for(auto a:A){
+            sumA += a;
+        }
+        for(auto b:B){
+            sumB += b;
+        }
+        int cha = (sumB - sumA)/2;  //相減 ->b 還相差多遠
+        cout << "cha: " << cha << endl;
+        unordered_map<int, int> m;
+        for(auto a:A){
+            m[a] = 1; //這個職exist
+        }
+        for(auto b:B){  //以A的角度 A要給B b-cha個
+            if(m[b-cha] == 1){
+                res.push_back(b-cha);
+                res.push_back(b);
+                return res;
+            }
+            else
+            {
+                cout << "b - cha: " << b -cha << endl;
+            }
+        }
+        return res;
+         
+        
+    }
+};

@@ -14,7 +14,6 @@ public:
         
         bool ans = true;
         ListNode* p = head; 
-        
         stack<int> st;
         
         while(p)

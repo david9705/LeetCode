@@ -12,16 +12,13 @@ public:
     }
     
     void pop() {
-        if(s1.top() == s2.top()) s2.pop();
-        
+        if(s1.top() == s2.top()) s2.pop();        
         s1.pop();
 
-        
     }
     
     int top() {
-        return s1.top();
-        
+        return s1.top();        
     }
     
     int getMin() {

@@ -2,11 +2,12 @@ class Solution {
 public:
     vector<int> countBits(int num) {
         
-        vector<int> ans;
+        vector<int> ans{0};
         
-        for(int i = 0 ;i <= num; i ++)
+        for(int i = 1; i <= num; i ++)
         {
-            ans.push_back(bitset<32>(i).count());
+           if(i % 2 == 0) ans.push_back(ans[i / 2]);
+           else ans.push_back(ans[i / 2] + 1);
         }
         
     
